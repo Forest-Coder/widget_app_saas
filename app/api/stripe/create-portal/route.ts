@@ -39,6 +39,7 @@ export async function POST(req: Request) {
     await db.insert(subscriptions).values({
       userId,
       stripeCustomerId: customer.id,
+      subscribed: true
     });
   }
 

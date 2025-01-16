@@ -14,7 +14,7 @@ export const projectsRelations = relations(projects, ({ many }) => ({
 }));
 
 export const feedbacks = pgTable("feedbacks", {
-  id: serial("id").primaryKey(),
+  id: uuid("id").primaryKey().defaultRandom(),
   projectId: uuid("project_id"),
   userName: text("user_name"),
   userEmail: text("user_email"),
