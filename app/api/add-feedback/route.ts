@@ -5,6 +5,9 @@ import { feedbacks } from "@/db/schema";
 
 export async function POST(req: Request) {
     //Validation
+    // console.log(req.get('host'))
+    // TODO Check origin and project-id 
+    console.log(req.headers.get("origin"))
     const data = await req.json()
     if (data.projectId == null) {
         return new Response(JSON.stringify({ data: { error: "Bad Request. projectId is empty " } }), { status: 400 });
