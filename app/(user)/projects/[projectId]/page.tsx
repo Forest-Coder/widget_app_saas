@@ -14,7 +14,7 @@ const page = async ({ params }: {
   if (!params.projectId) return (<div>Invalid Project ID</div>);
 
   const projects = await db.query.projects.findMany({
-    where: (eq(dbProjects.id, parseInt(params.projectId))),
+    where: (eq(dbProjects.id, params.projectId)),
     with: {
       feedbacks: true
     }
