@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS "feedbacks" (
+CREATE TABLE "feedbacks" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"project_id" integer,
 	"user_name" text,
@@ -7,15 +7,15 @@ CREATE TABLE IF NOT EXISTS "feedbacks" (
 	"rating" integer
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "projects" (
-	"id" serial PRIMARY KEY NOT NULL,
+CREATE TABLE "projects" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text,
 	"description" text,
 	"url" text,
 	"user_id" varchar
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "subscriptions" (
+CREATE TABLE "subscriptions" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"user_id" varchar,
 	"stripe_customer_id" text,
