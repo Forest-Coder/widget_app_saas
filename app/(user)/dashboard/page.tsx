@@ -17,10 +17,22 @@ export default async function Page() {
 
   const subscribed = await getSubscription({ userId });
 
+
+  if (userProjects.length == 0) {
+    return (
+      <div>
+        <div className="flex items-center justify-center gap-3 h-screen ">
+          <h1 className="text-3xl font-bold text-center my-4">Create a </h1>{subscribed !== true && userProjects.length > maxFreeProjects ? null : <NewProjBtn />}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="flex items-center justify-center gap-3">
         <h1 className="text-3xl font-bold text-center my-4">Your Projects</h1>{subscribed !== true && userProjects.length > maxFreeProjects ? null : <NewProjBtn />}
-      </div><ProjectsList projects={userProjects} subscribed={subscribed} /></div>
+      </div><ProjectsList projects={userProjects} subscribed={subscribed} />
+    </div>
   )
 }

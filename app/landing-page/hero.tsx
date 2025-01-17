@@ -5,7 +5,7 @@ import {
   SignedOut,
 } from '@clerk/nextjs'
 import Link from "next/link";
-import { LogIn, Github } from "lucide-react";
+import { LogIn, Github, Flame } from "lucide-react";
 import Image from "next/image";
 
 const Hero = () => {
@@ -22,15 +22,9 @@ const Hero = () => {
             <SignedOut>
               <SignUpButton>
                 <div className="flex gap-3">
-                  <Button>
-                    <LogIn className="w-4 h-4 mr-2" />
+                  <Button className="font-bold">
+                  <Flame className="mr-1"/>
                     Get Started</Button>
-                  <Button variant="secondary" asChild>
-                    <Link href="https://github.com">
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
-                    </Link>
-                  </Button>
                 </div>
               </SignUpButton>
             </SignedOut>

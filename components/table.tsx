@@ -1,6 +1,5 @@
 "use client";
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { ChevronRight, ChevronLeft, ChevronsRight, ChevronsLeft } from 'lucide-react'
 import Ratings from './ratings';
 
@@ -18,18 +17,18 @@ import {
 } from '@tanstack/react-table'
 
 import { InferSelectModel } from "drizzle-orm";
-import { feedbacks, projects } from "@/db/schema";
+import { feedbacks} from "@/db/schema";
 
 type Feedback = InferSelectModel<typeof feedbacks>;
 
 function Table(props: { data: Feedback[] }) {
-  const rerender = React.useReducer(() => ({}), {})[1]
+  // const rerender = React.useReducer(() => ({}), {})[1]
 
   const columns = React.useMemo<ColumnDef<Feedback>[]>(
     () => [
       {
         accessorKey: 'userName',
-        header: 'First Name',
+        header: 'Name',
         cell: info => info.getValue(),
         footer: props => props.column.id,
       },
@@ -69,7 +68,6 @@ function Table(props: { data: Feedback[] }) {
           columns,
         }}
       />
-      <hr />
     </>
   )
 }
@@ -95,23 +93,21 @@ function MyTable({
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange: setPagination,
-    //no need to pass pageCount or rowCount with client-side pagination as it is calculated automatically
     state: {
       pagination,
     },
-    // autoResetPageIndex: false, // turn off page index reset when sorting or filtering
   })
 
   return (
-    <div className="p-2 mt-5">
+    <div className="p-2 ">
       <div className="h-2" />
       <table className="w-full">
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id} className="border-b border-slate-300">
+            <tr key={headerGroup.id} className="border-b ">
               {headerGroup.headers.map(header => {
                 return (
-                  <th key={header.id} className="text-left bg-gray-50 rounded-t-md p-4" colSpan={header.colSpan}>
+                  <th key={header.id} className="text-left    p-4" colSpan={header.colSpan}>
                     <div
                       {...{
                         className: header.column.getCanSort()
@@ -125,11 +121,11 @@ function MyTable({
                         header.getContext()
                       )}
                       {{
-                        asc: ' 🔼',
-                        desc: ' 🔽',
+                        asc: ' ⬆',
+                        desc: ' ⬇',
                       }[header.column.getIsSorted() as string] ?? null}
                       {header.column.getCanFilter() ? (
-                        <div className="mt-2">
+                        <div className="mt-6">
                           <Filter column={header.column} table={table} />
                         </div>
                       ) : null}
@@ -161,31 +157,31 @@ function MyTable({
           })}
         </tbody>
       </table>
-      <div className="h-2" />
-      <div className="flex items-center gap-2">
+      
+      <div className="flex items-center gap-2 mt-5">
         <button
-          className="border rounded p-1 bg-gray-50 cursor-pointer"
+          className="border rounded p-1  cursor-pointer"
           onClick={() => table.firstPage()}
           disabled={!table.getCanPreviousPage()}
         >
           <ChevronsLeft />
         </button>
         <button
-          className="border rounded p-1 bg-gray-50 cursor-pointer"
+          className="border rounded p-1  cursor-pointer"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
           <ChevronLeft />
         </button>
         <button
-          className="border rounded p-1 bg-gray-50 cursor-pointer"
+          className="border rounded p-1  cursor-pointer"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
           <ChevronRight />
         </button>
         <button
-          className="border rounded p-1 bg-gray-50 cursor-pointer"
+          className="border rounded p-1  cursor-pointer"
           onClick={() => table.lastPage()}
           disabled={!table.getCanNextPage()}
         >
@@ -244,8 +240,8 @@ function Filter({
             old?.[1],
           ])
         }
-        placeholder={`Min`}
-        className="w-24 border shadow rounded"
+        placeholder={`  Min`}
+        className="w-24 border shadow rounded "
       />
       <input
         type="number"
@@ -256,7 +252,7 @@ function Filter({
             e.target.value,
           ])
         }
-        placeholder={`Max`}
+        placeholder={`  Max`}
         className="w-24 border shadow rounded"
       />
     </div>

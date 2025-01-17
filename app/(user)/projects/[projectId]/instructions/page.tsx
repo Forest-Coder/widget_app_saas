@@ -10,10 +10,9 @@ const page = ({ params }: {
 
   return (
     <div>
-      <h1 className="text-xl font-bold mb-2">Start Collecting Feedback</h1>
-      <p className="text-lg text-secondary-foreground">Embed the code in your site</p>
-      <div className="bg-blue-950 p-6 rounded-md mt-6 relative">
-        <code className=" text-white">
+      <h1 className="text-xl font-bold mb-2">Embed the Codes in Your Website</h1>
+      <div className=" bg-black p-6 rounded-md mt-6 relative">
+        <code className="text-white">
           {`<my-widget project-id="${params.projectId}"></my-widget>`}
           <br />
           {`<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}

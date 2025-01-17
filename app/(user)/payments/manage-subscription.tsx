@@ -35,7 +35,7 @@ const ManageSubscription = () => {
     return <p>{error}</p>
   }
   return (
-    <Button onClick={redirectToCustomerPortal} className="bg-indigo-700" disabled={loading}>{loading ? <>
+    <Button onClick={redirectToCustomerPortal} className="bg-blue-500 text-white hover:bg-white hover:text-black" disabled={loading}>{loading ? <>
       <Loader2 className="mr-2 h-4 w-4 animate-spin" />Please Wait</> : "Modify Your Subscription"}</Button>
   )
 }

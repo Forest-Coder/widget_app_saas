@@ -19,9 +19,9 @@ const page = async () => {
 
   return (
     <div className="p-4 border rounded-md">
-      <h1 className="text-4xl mb-3">Subscription Details</h1>
+      <h1 className="text-4xl mb-3">Subscription Status</h1>
       <p className="mb-2 text-lg">
-        Your current plan is: {plan}
+        Your Current Subcription Plan: <i>{plan}</i>
       </p>
       <ManageSubscription />
     </div>
