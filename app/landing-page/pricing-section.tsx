@@ -55,10 +55,10 @@ export const pricingPlans: PricingPlan[] = [
 const PricingSection = () => {
   return (
     <div className="text-center">
-      <h1 className="capitalize text-3xl">Pricing</h1>
-      <h2 className="font-extrabold text-3xl mb-8 pt-3">
-        Flexible Pricing to Fit Your Needs
-      </h2>
+      <h2 className="capitalize text-3xl font-bold">Pricing</h2>
+      <p className="text-gray-300 texl-lg text-xl mb-8 pt-5">
+        Affordable Price for Your Projects
+      </p>
       <div className="mt-10 grid items-center grid-cols-1 gap-3 md:grid-cols-3 max-w-screen-xl">
         {
           pricingPlans.map((plan, index) => (

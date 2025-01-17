@@ -8,6 +8,8 @@ import {
 } from '@clerk/nextjs'
 import './globals.css'
 import PageHeader from '@/components/page-header';
+import { ThemeProvider } from '@/components/theme-provider';
+import { cn } from '@/lib/utils';
 
 export default function RootLayout({
   children,
@@ -15,13 +17,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body>
-          <PageHeader />
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+          >
+            <PageHeader />
+            {children}
+          </ThemeProvider>
         </body>
       </html>
+
     </ClerkProvider>
+
   )
 }

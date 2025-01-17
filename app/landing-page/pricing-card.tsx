@@ -11,11 +11,11 @@ const PricingCard = ({ title, price, description, features, isPopular, url }: Pr
   }
 
   return (
-    <div className="border flex flex-col justify-between bg-white/20 rounded-lg h-full p-6 hover:shadow-md text-left relative">
+    <div className="border flex flex-col justify-between rounded-lg h-full p-6 hover:shadow-md text-left relative">
       {
         isPopular && (
-          <div className="absolute top-0 right-0 bg-gray-900 text-white px-2 py-1 rounded-bl-lg rounded-tr-lg">
-            Popular
+          <div className="absolute top-0 right-0 bg-gray-100 text-black px-3 py-1 rounded-bl-lg rounded-tr-lg">
+            popular
           </div>
         )
       }
@@ -31,8 +31,8 @@ const PricingCard = ({ title, price, description, features, isPopular, url }: Pr
         <ul>
           {
             features.map((feature, index) => (
-              <li key={index} className="flex flex-row items-center text-gray-700 gap-2 my-2">
-                <div className="rounded-full flex items-center justify-center bg-gray-900 w-4 h-4 mr-2">
+              <li key={index} className="flex flex-row items-center  gap-2 my-2">
+                <div className="rounded-full flex items-center justify-center w-4 h-4 ">
                   <Check className="text-white" width={10} height={10} />
                 </div>
                 <p>{feature}</p>
@@ -42,7 +42,7 @@ const PricingCard = ({ title, price, description, features, isPopular, url }: Pr
         </ul>
       </div>
       <div>
-        <button onClick={onClick} className="bg-gray-900 py-2 mt-3 rounded-lg text-white w-full">
+        <button onClick={onClick} className="bg-white py-2 mt-3 rounded-lg text-black w-full">
           Select Plan
         </button>
       </div>

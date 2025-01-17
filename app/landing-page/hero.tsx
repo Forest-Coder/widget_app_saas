@@ -11,12 +11,13 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="grow">
-      <div className="container mx-auto px-4 mb-24 mt-4 flex flex-col md:flex-row justify-center">
-        <div className="flex flex-col max-w-sm justify-center">
+      <div className="container mx-auto px-4 mb-24 mt-4 flex flex-col md:flex-row justify-center gap-20">
+        <div className="flex flex-col max-w-sm justify-center ">
           <div className="mb-8">
-            <h1 className="mb-5 text-5xl font-extrabold leading-tight">Collect your feedback seamlessly</h1>
-            <p className="text-gray-500 texl-lg">Easily integrate Nexx and start collecting feedback today.</p>
+            <h1 className="mb-5 text-4xl font-extrabold leading-tight">Get Feedbacks with no hassles</h1>
+            <p className="text-gray-300 texl-lg">Connect <i>Pidbaq</i> to your website and get feedbacks from your customers <strong  className="text-white">right now</strong>.</p>
           </div>
+          
           <div>
             <SignedOut>
               <SignUpButton>
@@ -39,7 +40,7 @@ const Hero = () => {
             </SignedIn>
           </div>
         </div>
-        <div className="flex-1 max-w-lg">
+        <div className="flex-1 max-w-lg"  style={{borderRadius: '30px', overflow: 'hidden'}}>
           <Image src={'/demo.gif'} alt="demo" layout={'responsive'} width={155} height={155} unoptimized={true} />
         </div>
       </div>
