@@ -12,8 +12,8 @@ import {CreditCard, Folder } from 'lucide-react';
 
 const PageHeader = () => {
   return (
-    <header className="sticky inset-x-0 top-0 z-30 w-full transition-all backdrop-blur-md">
-      <div className="w-full max-w-screen-xl px-2.5 lg:px-20 relative mx-auto border-b">
+    <header className="sticky inset-x-0 top-0 z-30 w-full transition-all backdrop-blur-3xl">
+      <div className="w-full  px-2.5 lg:px-20 relative mx-auto border-b border-[#202020]">
         <div className="flex flex-row h-14 items-center justify-between">
         <Link href="/dashboard" className='flex flex-row mx-2 hover:text-blue-500'><Image src="/logo.png" alt="Logo" width={120} height={120} /> </Link>
           <div>
