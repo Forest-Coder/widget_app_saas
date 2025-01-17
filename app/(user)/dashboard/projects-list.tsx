@@ -15,7 +15,7 @@ type Props = {
   subscribed: boolean | null | undefined;
 };
 
-const ProjectsList = (props: Props) => {
+export default function ProjectsList(props: Props){
 
   return (
     <div>
@@ -51,4 +51,3 @@ const ProjectsList = (props: Props) => {
     </div>
   )
 }
-export default ProjectsList;

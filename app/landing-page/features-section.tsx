@@ -28,7 +28,7 @@ const features = [
   }
 ];
 
-const FeaturesSection = () => {
+export default function FeaturesSection(){
   return (
     <section className=" container mx-auto max-w-screen-xl px-4 my-24 flex items-center flex-col">
       <h2 className="mb-6 text-3xl font-bold">Features</h2>
@@ -43,4 +43,3 @@ const FeaturesSection = () => {
   );
 }
 
-export default FeaturesSection;

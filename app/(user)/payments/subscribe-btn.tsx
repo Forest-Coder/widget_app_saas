@@ -9,7 +9,7 @@ type Props = {
   price: string
 }
 
-const SubscribeBtn = ({ price }: Props) => {
+export default function SubscribeBtn({ price }: Props){
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -46,5 +46,3 @@ const SubscribeBtn = ({ price }: Props) => {
       <Loader2 className="mr-2 h-4 w-4 animate-spin" />Please Wait</> : "Subscribe"}</Button>
   )
 }
-
-export default SubscribeBtn;

@@ -15,7 +15,7 @@ import { Plus } from "lucide-react";
 import { createProject } from "@/actions/createProject";
 import SubmitButton from "@/components/submit-proj-btn";
 
-const NewProjBtn = () => {
+export default function NewProjBtn(){
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -49,5 +49,3 @@ const NewProjBtn = () => {
     </Dialog>
   )
 };
-
-export default NewProjBtn;

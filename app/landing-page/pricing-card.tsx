@@ -4,7 +4,7 @@ import { PricingPlan } from "./pricing-section";
 import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const PricingCard = ({ title, price, description, features, isPopular, url }: PricingPlan) => {
+export default function PricingCard({ title, price, description, features, isPopular, url }: PricingPlan){
   const router = useRouter();
 
   const onClick = () => {
@@ -49,5 +49,3 @@ const PricingCard = ({ title, price, description, features, isPopular, url }: Pr
     </div>
   )
 }
-
-export default PricingCard;

@@ -21,7 +21,7 @@ import { feedbacks} from "@/db/schema";
 
 type Feedback = InferSelectModel<typeof feedbacks>;
 
-function Table(props: { data: Feedback[] }) {
+export default function Table(props: { data: Feedback[] }) {
   // const rerender = React.useReducer(() => ({}), {})[1]
 
   const columns = React.useMemo<ColumnDef<Feedback>[]>(
@@ -267,5 +267,3 @@ function Filter({
     />
   )
 }
-
-export default Table;

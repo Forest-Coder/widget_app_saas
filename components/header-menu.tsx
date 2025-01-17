@@ -3,7 +3,7 @@ import { Folder, CreditCard } from 'lucide-react';
 
 import Link from "next/link";
 
-const HeaderMenu = () => {
+export default function HeaderMenu() {
   return (
     <div className=' '>
       
@@ -18,6 +18,3 @@ const HeaderMenu = () => {
 
   )
 }
-
-export default HeaderMenu;
-

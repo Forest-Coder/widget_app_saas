@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
-const ManageSubscription = () => {
+export default function ManageSubscription() {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,4 +40,3 @@ const ManageSubscription = () => {
   )
 }
 
-export default ManageSubscription;

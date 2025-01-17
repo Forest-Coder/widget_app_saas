@@ -6,16 +6,15 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import Image from 'next/image'
-import { Button } from "@/components/ui/button"
 import Link from "next/link";
-import {CreditCard, Folder } from 'lucide-react';
+import { CreditCard, Folder } from 'lucide-react';
 
-const PageHeader = () => {
+export default function PageHeader() {
   return (
     <header className="sticky inset-x-0 top-0 z-30 w-full transition-all backdrop-blur-3xl">
       <div className="w-full  px-2.5 lg:px-20 relative mx-auto border-b border-[#202020]">
         <div className="flex flex-row h-14 items-center justify-between">
-        <Link href="/dashboard" className='flex flex-row mx-2 hover:text-blue-500'><Image src="/logo.png" alt="Logo" width={120} height={120} /> </Link>
+          <Link href="/dashboard" className='flex flex-row mx-2 hover:text-blue-500'><Image src="/logo.png" alt="Logo" width={120} height={120} /> </Link>
           <div>
             <SignedOut>
               <SignInButton>
@@ -50,5 +49,3 @@ const PageHeader = () => {
     </header>
   )
 }
-
-export default PageHeader;

@@ -1,10 +1,10 @@
 import CopyBtn from "@/components/copy-btn";
 
-const page = ({ params }: {
+export default function Page({ params }: {
   params: {
     projectId: string
   }
-}) => {
+}){
   if (!params.projectId) return (<div>Invalid Project ID</div>);
   if (!process.env.WIDGET_URL) return (<div>Missing WIDGET_URL</div>);
 
@@ -22,5 +22,3 @@ const page = ({ params }: {
     </div>
   )
 }
-
-export default page;

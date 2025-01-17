@@ -2,7 +2,7 @@ import PricingSection from './pricing-section';
 import Hero from './hero';
 import FeaturesSection from './features-section';
 
-const LandingPage = () => {
+export default function LandingPage(){
   return (
     <div>
       <Hero />
@@ -12,4 +12,3 @@ const LandingPage = () => {
   );
 }
 
-export default LandingPage;

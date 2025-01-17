@@ -52,7 +52,7 @@ export const pricingPlans: PricingPlan[] = [
 ]
 
 
-const PricingSection = () => {
+export default function PricingSection(){
   return (
     <div className="text-center">
       <h2 className="capitalize text-3xl font-bold">Pricing</h2>
@@ -69,5 +69,3 @@ const PricingSection = () => {
     </div>
   )
 }
-
-export default PricingSection;

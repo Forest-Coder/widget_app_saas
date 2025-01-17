@@ -7,11 +7,11 @@ import Table from "@/components/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 
-const page = async ({ params }: {
+export default async function Page({ params }: {
   params: {
     projectId: string
   }
-}) => {
+})  {
   if (!params.projectId) return (<div>Invalid Project ID</div>);
 
   const projects = await db.query.projects.findMany({
@@ -52,5 +52,3 @@ const page = async ({ params }: {
     </div>
   )
 }
-
-export default page;

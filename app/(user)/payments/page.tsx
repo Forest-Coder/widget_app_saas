@@ -4,8 +4,8 @@ import { subscriptions } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import ManageSubscription from "./manage-subscription";
 
-const page = async () => {
-  const { userId } = await auth();
+export default async function Page(){
+  const { userId } = auth();
 
   if (!userId) {
     return null;
@@ -19,7 +19,7 @@ const page = async () => {
 
   return (
     <div className="p-4 border rounded-md">
-      <h1 className="text-4xl mb-3">Subscription Status</h1>
+      <h1 className="text-4xl mb-3">Subscription Detail</h1>
       <p className="mb-2 text-lg">
         Your Current Subcription Plan: <i>{plan}</i>
       </p>
@@ -27,5 +27,3 @@ const page = async () => {
     </div>
   )
 };
-
-export default page;

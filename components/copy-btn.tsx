@@ -8,9 +8,9 @@ import {
 } from "@/components/ui/tooltip"
 
 
-const CopyBtn = ({ text }: {
+export default function CopyBtn({ text }: {
   text: string
-}) => {
+}) {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
       alert('Copied to clipboard');
@@ -31,5 +31,3 @@ const CopyBtn = ({ text }: {
 
   )
 }
-
-export default CopyBtn;
