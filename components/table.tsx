@@ -17,7 +17,8 @@ import {
 } from '@tanstack/react-table'
 
 import { InferSelectModel } from "drizzle-orm";
-import { feedbacks} from "@/db/schema";
+import { feedbacks } from "@/db/schema";
+import { Input } from './ui/input';
 
 type Feedback = InferSelectModel<typeof feedbacks>;
 
@@ -83,6 +84,7 @@ function MyTable({
     pageIndex: 0,
     pageSize: 10,
   })
+  const totalFeedback = data.length
 
   const table = useReactTable({
     columns,
@@ -98,6 +100,13 @@ function MyTable({
     },
   })
 
+  if (totalFeedback == 0){
+    return (
+      <div className='flex items-center justify-center text-3xl font-bold text-center my-4'>
+        No Feedback yet
+      </div>
+    )
+  }
   return (
     <div className="p-2 ">
       <div className="h-2" />
@@ -157,7 +166,7 @@ function MyTable({
           })}
         </tbody>
       </table>
-      
+      {/* TODO Conditional render below */}
       <div className="flex items-center gap-2 mt-5">
         <button
           className="border rounded p-1  cursor-pointer"
@@ -189,7 +198,7 @@ function MyTable({
         </button>
         <span className="flex items-center gap-1">
           | Go to page:
-          <input
+          <Input
             type="number"
             defaultValue={table.getState().pagination.pageIndex + 1}
             onChange={e => {
@@ -231,7 +240,7 @@ function Filter({
 
   return typeof firstValue === 'number' ? (
     <div className="flex space-x-2" onClick={e => e.stopPropagation()}>
-      <input
+      <Input
         type="number"
         value={(columnFilterValue as [number, number])?.[0] ?? ''}
         onChange={e =>
@@ -243,7 +252,7 @@ function Filter({
         placeholder={`  Min`}
         className="w-24 border shadow rounded "
       />
-      <input
+      <Input
         type="number"
         value={(columnFilterValue as [number, number])?.[1] ?? ''}
         onChange={e =>
@@ -257,8 +266,7 @@ function Filter({
       />
     </div>
   ) : (
-    <input
-      className="w-36 border shadow rounded p-1 text-slate-800 font-thin"
+    <Input
       onChange={e => column.setFilterValue(e.target.value)}
       onClick={e => e.stopPropagation()}
       placeholder={`Search...`}

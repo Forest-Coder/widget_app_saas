@@ -15,7 +15,7 @@ export default function Page({ params }: {
         <code className="text-white">
           {`<my-widget project-id="${params.projectId}"></my-widget>`}
           <br />
-          {`<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
+          {`<script defer src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
         </code>
         <CopyBtn text={`<my-widget project-id="${params.projectId}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} />
       </div>

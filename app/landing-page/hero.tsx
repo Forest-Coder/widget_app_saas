@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-1 max-w-lg" style={{ borderRadius: '30px', overflow: 'hidden' }}>
-          <Image src={'/demo.gif'} alt="demo" layout={'responsive'} width={155} height={155} unoptimized={true} />
+          {/* <Image src={'/demo.gif'} alt="demo" layout={'responsive'} width={155} height={155} unoptimized={true} /> */}
         </div>
       </div>
     </section>

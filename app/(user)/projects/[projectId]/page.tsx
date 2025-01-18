@@ -2,7 +2,7 @@ import { db } from "@/db";
 import { eq } from "drizzle-orm";
 import { projects as dbProjects } from "@/db/schema";
 import Link from "next/link";
-import { Globe, ChevronLeft, Code } from 'lucide-react';
+import { Globe, ChevronLeft, Code, Trash2 } from 'lucide-react';
 import Table from "@/components/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -11,7 +11,7 @@ export default async function Page({ params }: {
   params: {
     projectId: string
   }
-})  {
+}) {
   if (!params.projectId) return (<div>Invalid Project ID</div>);
 
   const projects = await db.query.projects.findMany({
@@ -35,10 +35,17 @@ export default async function Page({ params }: {
             <CardDescription className="text-lg">{project.description}</CardDescription>
             <div className="flex flex-col ">
               {project.url ? <Link href={project.url} className="hover:text-blue-500 text-gray-300 flex items-center">
-              <Globe className="h-5 w-5 mr-1" /><span className="text-lg">Visit Site</span></Link> : null}
+                <Globe className="h-5 w-5 mr-1" /><span className="text-lg">Visit Site</span></Link> : null}
               <Link href={`/projects/${params.projectId}/instructions`} className="hover:text-blue-500 text-gray-300 flex items-center ">
                 <Code className="h-5 w-5 mr-1" /><span className="text-lg">Show Code</span></Link>
+              <div className="flex hover:text-red-300 text-gray-500 mt-1">
+                <hr className=""/>
+                <Trash2 />
+                <span>Delete <i>{project.name}</i></span>
+              </div>
+
             </div>
+
           </CardHeader>
 
 
