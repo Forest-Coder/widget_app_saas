@@ -13,11 +13,11 @@ export default function Page({ params }: {
       <h1 className="text-xl font-bold mb-2">Embed the Codes in Your Website</h1>
       <div className=" bg-black p-6 rounded-md mt-6 relative">
         <code className="text-white">
-          {`<my-widget project-id="${params.projectId}"></my-widget>`}
+          {`<pid-baq project-id="${params.projectId}"></pid-baq>`}
           <br />
           {`<script defer src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
         </code>
-        <CopyBtn text={`<my-widget project-id="${params.projectId}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} />
+        <CopyBtn text={`<pid-baq project-id="${params.projectId}"></pid-baq>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} />
       </div>
     </div>
   )
